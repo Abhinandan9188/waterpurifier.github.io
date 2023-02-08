@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Drinkon 24/7</title>
+      <link rel="icon" type="image/x-icon" href="assets/logo.png">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+         .custom-1 {position: relative;
+         position: relative;
+         top: 0;
+         width: 100%;
+         background: linear-gradient(rgb(204 204 204 / 30%),rgb(210 208 208 / 36%)),url(assets/mainbg.png);
+         background-size: cover;
+         margin-bottom: 0;
+         }
+         .custom-2 {position: relative;
+         position: relative;
+         top: 0;
+         width: 100%;
+         background: linear-gradient(rgb(204 204 204 / 30%),rgb(210 208 208 / 36%)),url(assets/section-2-bg.png);
+         background-size: cover;
+         margin-bottom: 0;
+         }
+         .custom-3{
+         position: relative;
+         top: 0;
+         background: url(assets/water-pattern.png);
+         background-size: cover;
+         margin-bottom: 0;
+         background-repeat: no-repeat;
+         background-size: 380px 400px;
+         }
+         .text-oscuro {color:#445065;}
+         .title {
+         color: #7A7572;
+         }
+         .title::after, .title::before {
+         content: '';
+         position: absolute;
+         right: 1.25em;
+         top: 1.25em;
+         width: 2px;
+         height: 0.75em;
+         background-color: #7A7572;
+         transition: all 0.2s;
+         }
+         .title::after {
+         transform: rotate(90deg);
+         }
+         .content {
+         max-height: 0;
+         }
+         .toggle:checked + .title, .toggle:checked + .title + .content {
+         box-shadow: 3px 3px 6px #ddd, -3px 3px 6px #ddd;
+         }
+         .toggle:checked + .title + .content {
+         max-height: 500px;
+         }
+         .toggle:checked + .title::before {
+         transform: rotate(90deg) !important;
+         }
+         @media (max-width: 767px) {
+         .navicon {
+         width: 1.125em;
+         height: .125em;
+         }
+         .navicon::before,
+         .navicon::after {
+         display: block;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         transition: all .2s ease-out;
+         content: '';
+         background: #3D4852;
+         }
+         .navicon::before {
+         top: 5px;
+         }
+         .navicon::after {
+         top: -5px;
+         }
+         .menu-btn:not(:checked) ~ .menu {
+         display: none;
+         }
+         .menu-btn:checked ~ .menu {
+         display: block;
+         }
+         .menu-btn:checked ~ .menu-icon .navicon {
+         background: transparent;
+         }
+         .menu-btn:checked ~ .menu-icon .navicon::before {
+         transform: rotate(-45deg);
+         }
+         .menu-btn:checked ~ .menu-icon .navicon::after {
+         transform: rotate(45deg);
+         }
+         .menu-btn:checked ~ .menu-icon .navicon::before,
+         .menu-btn:checked ~ .menu-icon .navicon::after {
+         top: 0;
+         }
+         }
+         .mywrap {
+         position: relative;
+         z-index: 999;
+         width: 100%;
+         }
+         .head-info-area {
+         width: 100%;
+         margin: 0 auto;
+         }
+         .head-info-area .left, .head-info-area .right {
+         padding: 0;
+         }
+         .left {
+         float: left;
+         }
+         .head-info-area .phntp {
+         float: left;
+         margin-right: 40px;
+         margin-left: 0;
+         line-height: 50px;
+         display: flex;
+         align-items: center;
+         color: #fff;
+         }
+         .head-info-area .left img, .head-info-area .right img {
+         position: relative;
+         top: 4px;
+         margin-right: 5px;
+         }
+         .head-info-area .emltp {
+         float: left;
+         line-height: 50px;
+         display: flex;
+         align-items: center;
+         color: #fff;
+         }
+         .head-info-area .left, .head-info-area .right {
+         padding: 0;
+         }
+         .right {
+         float: right;
+         }
+         .head-info-area .sintp {
+         float: left;
+         }
+         .head-info-area .suptp {
+         float: left;
+         margin-left: 20px;
+         margin-top:12px;
+         }
+         .head-info-area .social-icons a:link, .head-info-area .social-icons a:visited {
+         background: 0 0!important;
+         text-align: center;
+         }
+         .head-info-area .social-icons a:link, .head-info-area .social-icons a:visited {
+         background: 0 0!important;
+         text-align: center;
+         }
+         .head-info-area .social-icons a:link, .head-info-area .social-icons a:visited {
+         background: 0 0!important;
+         text-align: center;
+         }
+         .clear {
+         clear: both;
+         }
+         .header {
+         width: 100%;
+         -webkit-transition: all .4s ease-out;
+         transition: all .4s ease-out;
+         display: table;
+         margin: 0 auto;
+         }
+         .center {
+         max-width: 1320px;
+         margin: 0 auto;
+         padding-left: 15px;
+         padding-right: 15px;
+         width: 100%;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         }
+         .head_inner {
+         width: 100%;
+         float: left;
+         z-index: 999;
+         background-color: #fff;
+         border-radius: 10px;
+         padding: 12px 25px;
+         margin-bottom: -45px;
+         box-shadow: 0 0 50px 0 rgb(0 0 0 / 5%);
+         }
+         .logo {
+         float: left;
+         max-width: 100%;
+         position: relative;
+         z-index: 999;
+         padding-right: 15px;
+         margin-left: 0;
+         }
+         @media (min-width: 1024px) and (max-width: 1199px){
+         .header-content-right {
+         width: 80%;
+         }}
+      </style>
+      <script>
+         tailwind.config = {
+           theme: {
+             extend: {
+               colors: {
+                 customcolor: '#002A3D',
+               }
+             }
+           }
+         }
+      </script>
+      <script>
+         $("#faqb").click(function() {
+         $('html,body').animate({
+         scrollTop: $("#faq").offset().top},
+         'slow');
+         });
+      </script>
+   </head>
+   <body class="font-sans ">
+      <!-- header 2  -->
+      <div class="mywrap bg-customcolor">
+         <div class="header_wrap layer_wrapper">
+            <div class="head-info-area">
+               <div class="center">
+                  <div class="left"><span class="phntp">
+                     <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/ringer-volume.png"/> 123 456 7890 </span> <span class="emltp">
+                     <img src="https://img.icons8.com/fluency-systems-filled/30/FFFFFF/filled-message.png"/>support@Drinkon24.com </span>
+                  </div>
+                  <div class="right">
+                     <div class="flex mt-4 space-x-6 justify-center sm:mt-0 pt-6">
+                        <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                           </svg>
+                           <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                           </svg>
+                           <span class="sr-only">Instagram page</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                           </svg>
+                           <span class="sr-only">Twitter page</span>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+            </div>
+            <div class="header type1">
+               <div class="center">
+                  <div class="head_inner">
+                     <nav class="nav flex flex-wrap items-center justify-between px-4">
+                        <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
+                           <img src="assets/logo.png" alt="logo">
+                        </div>
+                        <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+                        <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+                        <span class="navicon bg-grey-darkest flex items-center relative"></span>
+                        </label>
+                        <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto text-customcolor text-lg">
+                           <li class="border-t md:border-none">
+                              <a href="#product" class="font-semibold block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Product</a>
+                           </li>
+                           <li class="border-t md:border-none">
+                              <a href="#features" class="font-semibold block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Features</a>
+                           </li>
+                           <li class="border-t md:border-none">
+                              <a href="#benefits" class="font-semibold block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Benefits</a>
+                           </li>
+                           <li class="border-t md:border-none">
+                              <a href="#faq"  class=" font-semibold block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">FAQ</a>
+                           </li>
+                           <li class="border-t md:border-none">
+                              <a href="#" class="font-semibold block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Contact</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
+      </div>
+      <!-- end -->
+      <!-- section 1 -->
+      <div class="lg:h-screen flex items-center custom-1 py-8 ">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <div class="grid items-center md:grid-cols-3 gap-8">
+               <div class="m-auto md:m-0">
+                  <img class="inline" src="assets/drinkomain.png" alt="alternative" />
+               </div>
+               <div class="m-auto md:m-0">
+                  <h1 class="text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-extrabold mb-5">Live better with pure water, <br>
+                     get Drinkon24 
+                  </h1>
+                  <p class="text-lg">Water purifiers installed now!</p>
+               </div>
+               <div class="m-auto md:m-0 w-full">
+                  <div class="block p-6 rounded-lg bg-white ">
+                     <form>
+                        <h3 class="text-center text-customcolor font-normal text-lg">Signup for free Demo</h3>
+                        <div class="form-group mt-6 mb-6">
+                           <input type="email" class="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-900
+                              bg-gray-100 bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+                              aria-describedby="emailHelp" placeholder="Name">
+                        </div>
+                        <div class="form-group mt-6 mb-6">
+                           <input type="email" class="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-900
+                              bg-gray-100 bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+                              aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group mt-6 mb-6">
+                           <input type="email" class="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-900
+                              bg-gray-100 bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+                              aria-describedby="emailHelp" placeholder="Phone No">
+                        </div>
+                        <div class="form-group mt-6 mb-6">
+                           <input type="email" class="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-900
+                              bg-gray-100 bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+                              aria-describedby="emailHelp" placeholder="Address">
+                        </div>
+                        <div class="form-group mt-6 mb-6">
+                           <input type="email" class="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-900
+                              bg-gray-100 bg-clip-padding
+                              border border-solid border-gray-300
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
+                              aria-describedby="emailHelp" placeholder="Pincode">
+                        </div>
+                        <button type="submit" class="
+                           w-full
+                           px-6
+                           py-2.5
+                           bg-customcolor
+                           text-white
+                           font-medium
+                           text-xs
+                           leading-tight
+                           uppercase
+                           rounded
+                           shadow-md
+                           hover:shadow-lg
+                           focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                           active:bg-blue-800 active:shadow-lg
+                           transition
+                           duration-150
+                           ease-in-out">Submit</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- section 2 -->
+      <!-- End -->
+      <!-- section 4 -->
+      <div class="lg:h-screen flex items-center py-8" style="background-color: #f4fafe;">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <div class="grid lg:grid-cols-2 gap-2 lg:gap-12">
+               <div>
+                  <img class="p-12" src="assets/glass.png" alt="glass">
+               </div>
+               <div>
+                  <div class=" pt-4 lg:pt-36 ">
+                     <p class="text-customcolor font-bold text-2xl  ">Welcome to Water Purifier</p>
+                     <h3 class="text-black text-5xl font-extrabold leading-none pt-4">Solution for best-in-class water purification.                  </h3>
+                     <p class="text-gray text-xl pt-6">Designed to remove contaminants and impurities from water such as suspended particles, parasites, bacteria, algae, and viruses.
+                     </p>
+                     <ul class="list-reset text-black mb-8 pt-16  text-lg text-customcolor">
+                        <li class="flex gap-4 items-center mb-4 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>UV (Ultra Violet) light in the tank to keep pure water always pure.
+                           </span>
+                        </li>
+                        <li class="flex gap-4 items-center mb-4 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>UFM (Hollow fiber membrane) filters out the bacterias viruses & cysts.
+                           </span>
+                        </li>
+                        <li class="flex gap-4 items-center mb-4 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>High purification capacity.
+                           </span>
+                        </li>
+                        <li class="flex gap-4 items-center mb-4 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>UV disinfection system for 100% pure water. </span>
+                        </li>
+                        <li class="flex gap-4 items-center mb-4 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>Purified water available on demand in a tank.</span>
+                        </li>
+                        <li class="flex gap-4 items-center mb-14 ">
+                           <img src="https://img.icons8.com/material-sharp/24/002A3D/checked--v1.png"/>
+                           <span>LED indicators power on/off with the purification process.
+                           </span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End -->
+      <!-- Section 3 -->
+      <div class="lg:h-screen flex items-center py-8 " id="benefits">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <h3 class="text-center text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-bold">Benefits</h3>
+            <p class="text-center text-lg pt-2">The benefits of installing a Drinkon24 water purification system include:
+            </p>
+            <div class="grid items-center md:grid-cols-3 lg:grid-cols-3 gap-8">
+               <div>
+                  <ul class="list-reset text-black mb-8 pt-16  text-xl text-customcolor">
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <img class="w-10 " src="assets/Fewer toxic icon.png" alt="Fewer toxic icon">
+                        <span>Fewer toxic chemicals in
+                        your tap water </span>
+                     </li>
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <img class="w-10" src="assets/Better for icon.png" alt="Better for icon">
+                        <span>Better for the environment </span>
+                     </li>
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <img class="w-10" src="assets/Cost-effective icon.png" alt="Cost-effective icon">
+                        <span>Cost-effective</span>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <img src="assets/water glass.png" alt="water-galss">
+               </div>
+               <div>
+                  <ul class="list-reset text-black mb-8 pt-16  text-xl text-customcolor">
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <span>Improved quality of life </span>
+                        <img class="w-10 lg:ml-auto" src="assets/improve.png" alt="Fewer toxic icon">
+                     </li>
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <span>Lower risk of certain 
+                        health problems </span>
+                        <img class="w-10 lg:ml-auto" src="assets/lower.png" alt="Better for icon">
+                     </li>
+                     <li class="flex gap-4 items-center mb-16 ">
+                        <span>Removes bacteria viruses & cysts .</span>
+                        <img class="w-10 lg:ml-auto" src="assets/remove.png" alt="Cost-effective icon">
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End -->
+      <!-- section 3 -->
+      <div class=" flex items-center ">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <div class="grid lg:grid-cols-2 ">
+               <div class="pt-6 lg:pt-36 ">
+                  
+                  <h3 class="text-black text-5xl font-extrabold leading-none pt-4">Make your drinking water 100% safe & pure.
+                  </h3>
+                  <p class="text-gray text-xl pt-6">Vivamus non posuere nisl, id auctor ligula. Phasellus into<br>
+                     vitae lobortis nisi, ut aliquam mauris. Crasy vitae erosers<br>
+                     metus. Suspendisse imperdiet massa metus, iacinia and<br> libero lobortis necauris feugiat.
+                  </p>
+               </div>
+               <div class=" custom-3 pt-32 pb-12">
+                  <div style="background-color: #f4fafe;" class="ml-auto w-full max-w-lg p-4 bg-white border rounded-lg sm:p-8">
+                     <!-- List -->
+                     <ul class="list-reset text-black mb-8   text-xl text-customcolor">
+
+                        <li class="flex gap-4 items-center mb-16 ">
+                           <img class="w-16" src="assets/water-icon.png" alt="Cost-effective icon">
+                           <div>
+                              <!-- <span class="text-customcolor text-lg font-medium">Same Day</span> -->
+                              <h3 class="text-black text-2xl font-bold pb-1">Value for Money</h3>
+                              <p class="text-gray text-lg" >best quality water at an affordable price.
+                              </p>
+                           </div>
+                        </li>
+
+                        <li class="flex gap-4 items-center mb-16 ">
+                           <img class="w-16 " src="assets/water-icon.png" alt="Fewer toxic icon">
+                           <div>
+                              <!-- <span class="text-customcolor text-lg font-medium">Same Day</span> -->
+                              <h3 class="text-black text-2xl font-bold pb-1">Satisfactory Service</h3>
+                              <p class="text-gray text-lg" >purified water with a high level of filtration.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="flex gap-4 items-center mb-8 ">
+                           <img class="w-16" src="assets/water-icon.png" alt="Better for icon">
+                           <div>
+                              <!-- <span class="text-customcolor text-lg font-medium">Same Day</span> -->
+                              <h3 class="text-black text-2xl font-bold pb-1">Zero Maintenance</h3>
+                              <p class="text-gray text-lg" >high-quality filtration with long-lasting filters.</p>
+                           </div>
+                        </li>
+                        
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End -->
+      <!-- section 5 -->
+      <div class="lg:h-screen flex items-center py-8" style="background-color: #f4fafe;" id="product">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <h3 class="text-center text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-bold pb-20">Products</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-12">
+              
+              
+              
+               <diV>
+                  <div class="w-full py-10 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                     
+                     <a href="#">
+                     <img class="px-8 mx-auto rounded-t-lg" src="assets/drinkon-existo.png" alt="product image" />
+                     </a>
+                     <div class="px-5 pt-6">
+                        <a href="#">
+                           <h5 class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">DRINK-ON24 ™ Exito</h5>
+                        </a>
+                        <p class="text-center">NEW-GEN UV+UFM PURIFICATION SYSTEMS</p>
+                        <div class="text-center pt-2">
+                           <span class="text-lg text-gray-900 dark:text-white">Price start from 3000 INR</span>
+                        </div>
+                        <div class="text-center pt-6">
+                           <button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+                              Book Now
+                            </button>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </diV>
+               <div>
+                  <div class="w-full py-10 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                     <a href="#">
+                     <img class="px-8 mx-auto rounded-t-lg" src="assets/drinkon-celio.png" alt="product image" />
+                     </a>
+                     <div class="px-2 pt-6">
+                        <a href="#">
+                           <h5 class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">DRINK-ON24 ™ CIELO</h5>
+                        </a>
+                        <p class="text-center">NEW-GEN ALKALINE RO WATER PURIFIER SYSTEM</p>
+                        <div class="text-center pt-2">
+                           <span class="text-lg text-gray-900 dark:text-white">Price start from 4000 INR</span>
+                        </div>
+                        <div class="text-center pt-6">
+                           <button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+                              Book Now
+                            </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="w-full py-10 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                     <a href="#">
+                     <img class="px-8 mx-auto rounded-t-lg"   src="assets/drinkon-celio-1.png" alt="product image" />
+                     </a>
+                     <div class="px-5 pt-6">
+                        <a href="#">
+                           <h5 class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">DRINK-ON24 ™ CIELO</h5>
+                        </a>
+                        <p class="text-center">NEW-GEN RO WATER PURIFIER SYSTEM</p>
+                        <div class="text-center pt-2">
+                           <span class="text-lg text-gray-900 dark:text-white">Price start from 3000 INR</span>
+                        </div>
+                        <div class="text-center pt-6">
+                           <button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+                              Book Now
+                            </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End -->
+      <!-- section 6  -->
+      <div class="lg:h-screen flex items-center py-8" id="faq">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <div class="w-10/12 mx-auto mt-8 text-oscuro">
+               <div class="flex flex-col justify-center w-full">
+                  <h3 class="mb-8">
+                     <span class="text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-bold w-full sm:w-6/12 lg:w-full">
+                     FAQs
+                     </span>
+                  </h3>
+                  <div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle1" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle1">
+                        How to register a service request?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">At Water Purifier Systems, we take pride in offering the best customer service in the industry. Our team of experienced professionals is available to answer any questions you may have about our products and services. We want you to be completely satisfied with your purchase, so our team is always available to provide assistance and advice. 
+                              We understand that your needs are unique, so we can provide customized solutions that meet your specific requirements. We also offer support services such as installation advice, maintenance tips, and troubleshooting assistance. We are committed to providing the highest level of customer service, so please don’t hesitate to get in touch with us if you have any questions or concerns.
+                              We look forward to hearing from you.
+                              You Can Also Give A Call On DRINK-ON24 ™ ‘s Water Purifier Systems Helpline Number 9916903940/52, which is available 7 days a week From 8:00 AM To 8:00 PM.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle2" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle2">
+                        How to request installation?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">We believe that everyone deserves access to clean and safe drinking water. That’s why we offer a range of water purification systems that can be tailored to suit your specific needs. Our systems are designed to provide a reliable and efficient way to filter out impurities and contaminants, ensuring that your water is safe for drinking.
+                              Are you looking to experience the best in water purification? Request a demo from Drinkon24 today to learn how our water purification systems can provide you with 
+                              clean, great-tasting water! Our advanced reverse osmosis (RO) filtration system removes 99.9% of all contaminants and sediments, reducing the Total Dissolved Solids (TDS) levels. Experience the difference of purity with Drinkon24 water purifiers today!
+                              Fill out the form and reach out to us today to curate a safe and pure life with our water purifiers.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle5" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle5">
+                        How to check the warranty and service?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">
+                              This is another important piece of information that you need to know before buying a water purifier. all the water purifiers from Drink-on24 ™ water purifier systems come with a warranty period of 1 year from the date of installation. 
+                              During the warranty period, Drink-on24 ™ water purifier systems and the authorized service provider replace and repair any parts of the water purifier with faulty material or manufacturing defects. to find out more about the warranty and service. Click here (open a warranty card).
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle3" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle3">
+                        What do I need to know about the annual maintenance contract?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">Here is a piece of information & good news for our customers. DRINK-ON24 ™  RO Water Purifier Systems comes with affordable maintenance. So an AMC service is not required.
+                              NOTE: DRINK-ON24 ™ RO Water Purifier Systems does not require any kind of AMC service. DRINK-ON24 ™ Water Purifier Systems won't provide AMC service and our authorized service provider also won't provide AMC service. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle4" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle4">
+                        Are spare parts easily available?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">Spare parts are another important factor that you need to consider when buying a water purifier. When It Comes To The Water Purifiers From DRINK-ON24 ™ Water Purifier Systems, it is advised to avoid buying spare parts from any rando local market or local store, or any online platforms. Because DRINK-ON24 ™ water purifier systems do not sell any spare parts to unauthorized service providers. 
+                              DRINK-ON24 ™ water purifier systems want customers to get genuine spare parts for quality maintenance and to avoid fraud. 
+                              You can easily place a service request and the technician will provide the necessary spare parts about the pricing and authenticity of the spare parts. We have also uploaded a list of the spare parts with the item code and prices. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle5" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle5">
+                        What are the charges for a technician visit?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">The charges for technician visit is also an important factor when buying a water purifier. The technician visits charges vary for the different water purifiers from DRINK-ON24 ™ Water Purifier Systems. To make it convenient for the customers, our charges are here: 
+                              1. To Outskirts Customers 250/-
+                              2. To Inskirts Customers 200/- 
+                              These charges are applicable when the product is out of warranty.
+                              **This Is The Bottom Line Info
+                              Hassle-Free After-Sales service Ensure That Your Water Purifier Functions Smoothly Without any Glitches. Asking These Essential Questions Before Buying A Water Purifier Can Help Choose A BRAND That Will Give You Peace Of Mind. To Find Out More About The After-Sales. Service Of DRINK-ON24 ™ Water Purifier Systems. Click Here (Open A service Complaint Page on the website with the Whatsapp chat room).
+                           </p>
+                        </div>
+                     </div>
+                     <div class="relative mb-4">
+                        <input type="checkbox" id="toggle6" class="toggle hidden" />
+                        <label class="bg-gray-100 title block font-bold bg-white p-4 cursor-pointer" for="toggle6">
+                        How to analyze the type of water purifier with respect to the TDS levels?
+                        </label>
+                        <div class="content bg-white overflow-hidden">
+                           <p class="p-4">Reverse osmosis (RO) water filtration typically reduces TDS levels. Here is the chart that helps you to understand which water purifier is ideal for a particular TDS level of your kitchen tap water.
+                              <br>
+                              <strong>TDS LEVEL : </strong>             
+                              0-200       
+                              200-300        
+                              300-500        
+                              500-1000  <br>
+                              <strong>TYPE OF PURIFIER :</strong> 
+                              UV WATER PURIFIER
+                              RO+UV WATER PURIFIER
+                              RO+UV+UFM WATER PURIFIER
+                              UV WATER PURIFIER
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End -->
+      <!-- footer -->
+      <div class="bg-black">
+         <div class="mx-auto px-6 lg:px-32 ">
+            <footer class="p-4  shadow md:px-6 md:py-8 dark:bg-gray-900">
+               <div class="sm:flex sm:items-center sm:justify-between">
+                  <a href="#" class="flex items-center mb-4 sm:mb-0">
+                     <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" /> -->
+                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Drinkon</span><br>
+                  </a>
+                  <ul class="flex flex-wrap items-center pb-6 mt-6 justify-around text-sm text-white sm:mb-0 dark:text-gray-400">
+                     <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Product</a>
+                     </li>
+                     <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6">Features</a>
+                     </li>
+                     <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Benefits</a>
+                     </li>
+                     <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Faq</a>
+                     </li>
+                     <li>
+                        <a href="#" class="hover:underline">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+               <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+               <div class="sm:flex sm:items-center sm:justify-between">
+                  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">Drinkon™</a>. All Rights Reserved.
+                  </span>
+                  <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                     <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                           <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Facebook page</span>
+                     </a>
+                     <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                           <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Instagram page</span>
+                     </a>
+                     <a href="#" class="text-white hover:text-gray-200 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                        <span class="sr-only">Twitter page</span>
+                     </a>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <!-- End -->
+
+
+<!-- 
+      <div class="lg:h-screen flex items-center py-8" style="background-color: #f4fafe;" id="product">
+         <div class="container mx-auto px-6 lg:px-32 ">
+            <h3 class="text-center text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-bold pb-20">Products</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-12">
+
+
+<div class="relative max-w-sm rounded-lg overflow-hidden shadow-lg">
+   <img id="product1-image" src="assets/drinkon-celio.png" >
+   <div class="px-6 py-4">
+     <div class="font-medium text-xl mb-2">Product 1</div>
+     <p class="text-gray-700 text-base">
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+     </p>
+   </div>
+   <div class="px-6 py-4">
+     <span class="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-medium text-white mr-2" onclick="changeProductColor('red', 1)">Red</span>
+     <span class="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-medium text-white" onclick="changeProductColor('blue', 1)">Blue</span>
+   </div>
+   <div class="absolute bottom-0 right-0 p-2">
+     <p id="product1-price" class="text-lg font-medium">$0.00</p>
+   
+   </div>
+ </div>
+ 
+ <div class="relative max-w-sm rounded-lg overflow-hidden shadow-lg">
+   <img id="product2-image" src="assets/drinkon-existo.png" >
+   <div class="px-6 py-4">
+     <div class="font-medium text-xl mb-2">Product 2</div>
+     <p class="text-gray-700 text-base">
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+     </p>
+   </div>
+   <div class="px-6 py-4">
+     <span class="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-medium text-white mr-2" onclick="changeProductColor('red', 2)">Red</span>
+     <span class="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-medium text-white" onclick="changeProductColor('blue', 2)">Blue</span>
+   </div>
+   <div class="absolute bottom-0 right-0 p-2">
+     <p id="product2-price" class="text-lg font-medium">$0.00</p>
+   </div>
+ </div>
+ 
+ 
+ </div>
+ </div>
+ </div>
+ 
+<script>
+   const products = [
+  {
+    id: 1,
+    name: "Product 1",
+    defaultImage: "product1-default.jpg",
+    redImage: "assets/drinkon-existo.png",
+    blueImage: "assets/drinkon-celio.png",
+    defaultPrice: "$0.00",
+    redPrice: "$10.00",
+   
+    bluePrice: "$20.00"
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    defaultImage: "product2-default.jpg",
+    redImage: "assets/drinkon-existo.png",
+    blueImage: "assets/drinkon-celio.png",
+    defaultPrice: "$0.00",
+    redPrice: "$15.00",
+    bluePrice: "$25.00"
+  },
+  {
+    id: 3,
+    name: "Product 3",
+    defaultImage: "product3-default.jpg",
+    redImage: "product3-red.jpg",
+    blueImage: "product3-blue.jpg",
+    defaultPrice: "$0.00",
+    redPrice: "$5.00",
+    bluePrice: "$15.00"
+  },
+  {
+    id: 4,
+    name: "Product 4",
+    defaultImage: "product4-default.jpg",
+    redImage: "product4-red.jpg",
+    blueImage: "product4-blue.jpg",
+    defaultPrice: "$0.00",
+    redPrice: "$20.00",
+    bluePrice: "$30.00"
+  },
+  {
+    id: 5,
+    name: "Product 5",
+    defaultImage: "product5-default.jpg",
+    redImage: "product5-red.jpg",
+    blueImage: "product5-blue.jpg",
+    defaultPrice: "$0.00",
+    redPrice: "$10.00",
+    bluePrice: "$20.00"
+  },
+  {
+    id: 6,
+    name: "Product 6",
+    defaultImage: "product6-default.jpg",
+    redImage: "product6-red.jpg",
+    blueImage: "product6-blue.jpg",
+    defaultPrice: "$0.00",
+    redPrice: "$15.00",
+    bluePrice: "$25.00"
+  }
+];
+
+function changeProductColor(color, id) {
+  const product = products.find(p => p.id === id);
+  const imageId = `product${id}-image`;
+  const priceId = `product${id}-price`;
+  if (color === "red") {
+    document.getElementById(imageId).src = product.redImage;
+    document.getElementById(priceId).innerHTML = product.redPrice;
+    
+  } else if (color === "blue") {
+    document.getElementById(imageId).src = product.blueImage;
+    document.getElementById(priceId).innerHTML = product.bluePrice;
+  }
+}
+
+</script> -->
+
+
+
+
+
+
+
+
+<div class="h-auto flex items-center py-8" style="background-color: #f4fafe;" id="product">
+   <div class="container mx-auto px-6 lg:px-32  ">
+      <h3 class="text-center text-customcolor text-2xl sm:text-3xl lg:text-4xl leading-titles font-bold pb-12">Products</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-12">
+<!-- product 1 -->
+         <div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div class="color-options pt-4 text-right px-6">
+               <button class="bg-white text-white p-2 rounded-full" onmouseover="changeProduct1('white')"></button>
+               <button class="bg-black text-white p-2 rounded-full" onmouseover="changeProduct1('black')"></button>
+             </div>  
+     <img class="px-8 mx-auto rounded-t-lg object-cover  w-80"  id="product1-image" src="assets/pimages/Cielo RO+UV White.png" alt="Product 1">
+     
+     
+     <div class="card-content">
+       <h2 id="product1-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Cielo RO+UV</h2>
+       
+      
+      <!-- <p class="text-center">Cielo RO+UV</p> -->
+      <span class="flex justify-center gap-4">
+         <p id="product1-saleprice" class="text-black">₹15999</p>
+         <p id="product1-price"  class="text-gray-400 line-through">₹21799</p>
+       
+        </span>
+      <div class="text-center pt-2">
+      <button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+         Book Now
+       </button>
+       </div>
+     </div>
+   </div>
+
+<!-- product 2 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct2('white')"></button>
+      <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct2('black')"></button>
+    </div>  
+<img class="px-8 mx-auto rounded-t-lg object-cover  w-80" id="product2-image" src="assets/pimages/Exito RO+UV White.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product2-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Exito RO+UV</h2>
+
+
+<!-- <p class="text-center">Exito RO+UV</p> -->
+<span class="flex justify-center gap-4">
+<p id="product2-saleprice" class="text-black">₹15999</p>
+<p id="product2-price"  class="text-gray-400 line-through">₹21999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+
+<!-- product 3 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct3('white')"></button>
+      <!-- <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct2('black')"></button> -->
+    </div>  
+<img class="px-8 mx-auto rounded-t-lg object-cover  w-80" id="product3-image" src="assets/pimages/RIO RO.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product3-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Rio RO</h2>
+
+
+<!-- <p class="text-center">Rio RO</p> -->
+<span class="flex justify-center gap-4">
+<p id="product3-saleprice" class="text-black">₹8999</p>
+<p id="product3-price"  class="text-gray-400 line-through">₹14999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+
+<!-- product 4 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <!-- <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct4('white')"></button> -->
+       <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct4('black')"></button>
+    
+   </div>  
+<img style="width: 100%; max-width: 350px;" class="px-8 mx-auto rounded-t-lg object-cover w-80" id="product3-image" src="assets/pimages/Exito UV+UFM Black only.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product3-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Exito UV+UFM</h2>
+
+
+<!-- <p class="text-center">Rio RO</p> -->
+<span class="flex justify-center gap-4">
+<p id="product4-saleprice" class="text-black">₹8999</p>
+<p id="product4-price"  class="text-gray-400 line-through">₹14999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+<!-- product 5 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct5('white')"></button>
+      
+      <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct5('black')"></button>
+    
+   </div>  
+<img class="px-8 mx-auto rounded-t-lg object-cover  w-80" id="product5-image" src="assets/pimages/Cielo 2IN1 Tech White.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product5-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Cielo 2IN1 Tech</h2>
+
+
+<!-- <p class="text-center">Rio RO</p> -->
+<span class="flex justify-center gap-4">
+<p id="product5-saleprice" class="text-black">₹18499</p>
+<p id="product5-price"  class="text-gray-400 line-through">₹24999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+
+<!-- product 6 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct6('white')"></button>
+      
+      <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct6('black')"></button>
+    
+   </div>  
+<img style="width: 100%; max-width: 350px;" class="px-8 mx-auto rounded-t-lg object-cover  " id="product6-image" src="assets/pimages/Cielo RO+ALKALINE White.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product5-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Cielo RO+ ALKALINE</h2>
+
+
+<!-- <p class="text-center">Rio RO</p> -->
+<span class="flex justify-center gap-4">
+<p id="product6-saleprice" class="text-black">₹18499</p>
+<p id="product6-price"  class="text-gray-400 line-through">₹24999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+
+<!-- product 7 -->
+<div class="w-full pb-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+   <div class="color-options pt-4 text-right px-6">
+      <button class="bg-white text-white p-2 rounded-full" onclick="changeProduct7('white')"></button>
+      
+      <button class="bg-black text-white p-2 rounded-full" onclick="changeProduct7('black')"></button>
+    
+   </div>  
+<img class="px-8 mx-auto rounded-t-lg object-cover w-80" id="product7-image" src="assets/pimages/Exito RO+ COPPER White.png" alt="Product 1">
+
+
+<div class="card-content">
+<h2 id="product7-name" class="text-center text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Exito RO+COPPER</h2>
+
+
+<!-- <p class="text-center">Rio RO</p> -->
+<span class="flex justify-center gap-4">
+<p id="product7-saleprice" class="text-black">₹18499</p>
+<p id="product7-price"  class="text-gray-400 line-through">₹24999</p>
+
+</span>
+<div class="text-center pt-2">
+<button class="bg-transparent m-auto hover:bg-customcolor text-customcolor font-semibold hover:text-white py-2 px-4 border border-customcolor hover:border-transparent rounded">
+Book Now
+</button>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+ 
+ <script>
+   function changeProduct1(color) {
+     if (color === 'white') {
+       document.getElementById('product1-image').src = 'assets/pimages/Cielo RO+UV White.png';
+       document.getElementById('product1-price').innerHTML = '₹21799';
+       document.getElementById('product1-saleprice').innerHTML = '₹15999';
+      
+     } else if (color === 'black') {
+       document.getElementById('product1-image').src = 'assets/pimages/Cielo RO+UV Black.png';
+       document.getElementById('product1-price').innerHTML = '₹21999';
+       document.getElementById('product1-saleprice').innerHTML = '₹16499';
+
+     }
+   }
+   
+// product2
+   function changeProduct2(color) {
+     if (color === 'white') {
+       document.getElementById('product2-image').src = 'assets/pimages/Exito RO+UV White.png';
+       document.getElementById('product2-price').innerHTML = '₹21999';
+       document.getElementById('product2-saleprice').innerHTML = '₹15999';
+      
+     } else if (color === 'black') {
+       document.getElementById('product2-image').src = 'assets/pimages/Exito RO+UV Black.png';
+       document.getElementById('product2-price').innerHTML = '₹21999';
+       document.getElementById('product2-saleprice').innerHTML = '₹16499';
+
+     }
+   }
+
+   // product5
+   function changeProduct5(color) {
+     if (color === 'white') {
+       document.getElementById('product5-image').src = 'assets/pimages/Cielo 2IN1 Tech White.png';
+       document.getElementById('product5-price').innerHTML = '₹24999';
+       document.getElementById('product5-saleprice').innerHTML = '₹18499';
+      
+     } else if (color === 'black') {
+       document.getElementById('product5-image').src = 'assets/pimages/Exito RO+UV Black.png';
+       document.getElementById('product5-price').innerHTML = '₹24999';
+       document.getElementById('product5-saleprice').innerHTML = '₹18499';
+
+     }
+   }
+
+   // product6
+   function changeProduct6(color) {
+     if (color === 'white') {
+       document.getElementById('product6-image').src = 'assets/pimages/Cielo RO+ALKALINE White.png';
+       document.getElementById('product6-price').innerHTML = '₹22599';
+       document.getElementById('product6-saleprice').innerHTML = '₹18599';
+      
+     } else if (color === 'black') {
+       document.getElementById('product6-image').src = 'assets/pimages/Cielo RO+ALKALINE Black.png';
+       document.getElementById('product6-price').innerHTML = '₹22799';
+       document.getElementById('product6-saleprice').innerHTML = '₹18799';
+
+     }
+   }
+   
+// product 7
+   function changeProduct7(color) {
+     if (color === 'white') {
+       document.getElementById('product7-image').src = '  assets/pimages/Exito RO+ COPPER White.png';
+       document.getElementById('product7-price').innerHTML = '₹22599';
+       document.getElementById('product7-saleprice').innerHTML = '₹18599';
+      
+     } else if (color === 'black') {
+       document.getElementById('product7-image').src = 'assets/pimages/Exito RO+ COPPER Black.png';
+       document.getElementById('product7-price').innerHTML = '₹22799';
+       document.getElementById('product7-saleprice').innerHTML = '₹18799';
+
+     }
+   }
+   
+
+ 
+ </script>
+ 
+ 
+
+
+
+
+   </body>
+</html>
